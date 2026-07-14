@@ -569,9 +569,23 @@
   // ---------- Parseo de leads ----------
   function extractJsonArray(text){
     const start = text.indexOf('[');
-    const end = text.lastIndexOf(']');
-    if(start === -1 || end === -1 || end < start) return null;
-    return text.slice(start, end + 1);
+    if(start === -1) return null;
+    let depth = 0;
+    let inString = false;
+    let escapeNext = false;
+    for(let i = start; i < text.length; i++){
+      const ch = text[i];
+      if(escapeNext){ escapeNext = false; continue; }
+      if(ch === '\\' && inString){ escapeNext = true; continue; }
+      if(ch === '"'){ inString = !inString; continue; }
+      if(inString) continue; // ignora corchetes dentro de textos/URLs
+      if(ch === '['){ depth++; }
+      else if(ch === ']'){
+        depth--;
+        if(depth === 0) return text.slice(start, i + 1);
+      }
+    }
+    return null; // nunca se cerró: sí está cortado de verdad
   }
 
   function parseLeads(){
@@ -590,7 +604,7 @@
     }catch(e){
       const extracted = extractJsonArray(text);
       if(!extracted){
-        importMsg.textContent = 'No se encontró un arreglo [...] en el texto pegado. Revisa que incluya los datos del pipeline.';
+        importMsg.textContent = 'No se encontró un arreglo [...] completo en el texto — parece que el pegado se cortó antes de cerrar el último "]". Vuelve a copiar el texto completo desde el principio.';
         importMsg.classList.add('error');
         return;
       }
@@ -598,7 +612,7 @@
         data = JSON.parse(extracted);
         usedExtraction = true;
       }catch(e2){
-        importMsg.textContent = 'Se encontró un arreglo pero no se pudo leer — puede estar cortado a la mitad. Vuelve a copiar el texto completo.';
+        importMsg.textContent = 'El arreglo se encontró completo (los corchetes cierran bien) pero su contenido no es JSON válido — puede haber una comilla o coma mal puesta en alguna nota. Mándame el error si se repite.';
         importMsg.classList.add('error');
         return;
       }
