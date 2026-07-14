@@ -588,6 +588,30 @@
     return null; // nunca se cerró: sí está cortado de verdad
   }
 
+  // Corrige el caso en que saltos de línea reales (los que separan campos del JSON,
+  // no los que van dentro del texto de una nota) quedaron aplanados como el texto
+  // literal \n durante algún copiado/pegado. Deja intactos los \n que sí están dentro
+  // de comillas, porque ahí sí son un escape válido.
+  function normalizeStrayEscapes(text){
+    let out = '';
+    let inString = false;
+    let i = 0;
+    const n = text.length;
+    while(i < n){
+      const ch = text[i];
+      if(inString){
+        if(ch === '\\' && i + 1 < n){ out += ch + text[i+1]; i += 2; continue; }
+        if(ch === '"'){ inString = false; out += ch; i++; continue; }
+        out += ch; i++; continue;
+      }else{
+        if(ch === '"'){ inString = true; out += ch; i++; continue; }
+        if(ch === '\\' && i + 1 < n && text[i+1] === 'n'){ out += ' '; i += 2; continue; }
+        out += ch; i++; continue;
+      }
+    }
+    return out;
+  }
+
   function parseLeads(){
     importMsg.textContent = '';
     importMsg.className = 'import-msg';
@@ -599,6 +623,7 @@
     }
     let data;
     let usedExtraction = false;
+    let usedNormalize = false;
     try{
       data = JSON.parse(text);
     }catch(e){
@@ -612,9 +637,15 @@
         data = JSON.parse(extracted);
         usedExtraction = true;
       }catch(e2){
-        importMsg.textContent = 'El arreglo se encontró completo (los corchetes cierran bien) pero su contenido no es JSON válido — puede haber una comilla o coma mal puesta en alguna nota. Mándame el error si se repite.';
-        importMsg.classList.add('error');
-        return;
+        try{
+          data = JSON.parse(normalizeStrayEscapes(extracted));
+          usedExtraction = true;
+          usedNormalize = true;
+        }catch(e3){
+          importMsg.textContent = 'El arreglo se encontró completo pero su contenido no es JSON válido, ni siquiera después de corregir saltos de línea. Mándame este error exacto: ' + e3.message;
+          importMsg.classList.add('error');
+          return;
+        }
       }
     }
     if(!Array.isArray(data)){
@@ -623,7 +654,10 @@
       return;
     }
     leads = data;
-    importMsg.textContent = leads.length + ' leads cargados correctamente.' + (usedExtraction ? ' (se detectó y usó solo el arreglo dentro del texto pegado)' : '');
+    let nota = '';
+    if(usedExtraction) nota += ' (se detectó y usó solo el arreglo dentro del texto pegado)';
+    if(usedNormalize) nota += ' (se corrigieron saltos de línea aplanados)';
+    importMsg.textContent = leads.length + ' leads cargados correctamente.' + nota;
     importMsg.classList.add('ok');
     renderLeads();
   }
