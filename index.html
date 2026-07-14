@@ -567,6 +567,13 @@
   }
 
   // ---------- Parseo de leads ----------
+  function extractJsonArray(text){
+    const start = text.indexOf('[');
+    const end = text.lastIndexOf(']');
+    if(start === -1 || end === -1 || end < start) return null;
+    return text.slice(start, end + 1);
+  }
+
   function parseLeads(){
     importMsg.textContent = '';
     importMsg.className = 'import-msg';
@@ -577,12 +584,24 @@
       return;
     }
     let data;
+    let usedExtraction = false;
     try{
       data = JSON.parse(text);
     }catch(e){
-      importMsg.textContent = 'Ese texto no es JSON válido. Revisa que copiaste el arreglo completo.';
-      importMsg.classList.add('error');
-      return;
+      const extracted = extractJsonArray(text);
+      if(!extracted){
+        importMsg.textContent = 'No se encontró un arreglo [...] en el texto pegado. Revisa que incluya los datos del pipeline.';
+        importMsg.classList.add('error');
+        return;
+      }
+      try{
+        data = JSON.parse(extracted);
+        usedExtraction = true;
+      }catch(e2){
+        importMsg.textContent = 'Se encontró un arreglo pero no se pudo leer — puede estar cortado a la mitad. Vuelve a copiar el texto completo.';
+        importMsg.classList.add('error');
+        return;
+      }
     }
     if(!Array.isArray(data)){
       importMsg.textContent = 'Se esperaba un arreglo de leads ([{...}, {...}]).';
@@ -590,7 +609,7 @@
       return;
     }
     leads = data;
-    importMsg.textContent = leads.length + ' leads cargados correctamente.';
+    importMsg.textContent = leads.length + ' leads cargados correctamente.' + (usedExtraction ? ' (se detectó y usó solo el arreglo dentro del texto pegado)' : '');
     importMsg.classList.add('ok');
     renderLeads();
   }
