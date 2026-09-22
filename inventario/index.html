@@ -286,6 +286,9 @@ body{
 .reply-box b{color:var(--blue)}
 .pipeline-row{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-top:14px}
 @media(max-width:900px){.pipeline-row{grid-template-columns:1fr}}
+
+.status-card.pending{background:linear-gradient(180deg,#f7f9fc,#fff);border-color:#dfe6ee}
+.status-badge.gray{background:#eef1f4;color:#526173}
 </style>
 </head>
 <body>
@@ -347,27 +350,32 @@ body{
 <div class="section-title">Avance de activación</div>
 <div class="grid thirds">
 <div class="card" style="border:2px solid #cfeede;background:linear-gradient(180deg,#eefbf6 0%,#fff 100%)">
-<div style="font-size:30px">✅</div>
-<div class="box-title">Trompo · McNeilus A</div>
-<div style="font-size:36px;font-weight:900;color:#0f8a5f">16 enviados</div>
-<div class="smalltext" style="margin-top:8px">Primer grupo <b>completado</b>. Los restantes se protegieron porque ya tenían contacto reciente de su asesor con el trompo.</div>
+<div style="font-size:42px">✅</div>
+<div style="font-size:18px;font-weight:900;color:#102030;margin-top:6px">Trompo · McNeilus A</div>
+<div style="font-size:36px;font-weight:900;color:#0f8a5f;margin-top:12px">16 enviados</div>
+<div class="smalltext" style="margin-top:8px">
+          Primer grupo <b>completado</b>. Los restantes se protegieron porque ya tenían contacto reciente de su asesor con el trompo.
+        </div>
 <div class="team-note" style="background:#e5f8ef;border-color:#cfeede;color:#0f6a52">ESTATUS: EN ESPERA DE RESPUESTAS</div>
 </div>
 <div class="card" style="border:2px solid #ffd7ab;background:linear-gradient(180deg,#fff7ee 0%,#fff 100%)">
-<div style="font-size:30px">🟠</div>
-<div class="box-title">Grúa · National A</div>
-<div style="display:flex;align-items:end;gap:8px"><div style="font-size:36px;font-weight:900;color:#f18c26">7</div><div style="font-size:15px;color:#617083;margin-bottom:4px">de 22 enviados</div></div>
-<div style="height:12px;background:#f2e5d8;border-radius:999px;overflow:hidden;margin:12px 0"><div style="height:100%;width:31.8%;background:linear-gradient(90deg,#f18c26,#ffb357)"></div></div>
-<div class="smalltext"><b>15 contactos pendientes</b> de envío. Al terminar, pasa también a espera de respuestas.</div>
-<div class="team-note">ESTATUS: EN PROCESO</div>
+<div style="font-size:42px">🟡</div>
+<div style="font-size:18px;font-weight:900;color:#102030;margin-top:6px">Grúa · National A</div>
+<div style="font-size:36px;font-weight:900;color:#f18c26;margin-top:12px">22 enviados</div>
+<div class="smalltext" style="margin-top:8px">
+          La primera lista ya fue enviada. Hemos tenido <b>2 respuestas</b> (Mauricio Fritz y Mario Vargas) y el resto queda en espera de respuesta.
+        </div>
+<div class="team-note" style="background:#fff4e6;border-color:#ffd7ab;color:#b86400">ESTATUS: EN ESPERA DE RESPUESTAS</div>
 </div>
 <div class="card" style="border:2px solid #dbe7f5;background:linear-gradient(180deg,#f3f8fe 0%,#fff 100%)">
-<div style="font-size:30px">➡️</div>
-<div class="box-title">Siguiente lista</div>
-<div style="font-size:28px;font-weight:900;color:#134a88">McNeilus B</div>
-<div style="font-size:16px;font-weight:800;margin-top:4px">43 contactos base</div>
-<div class="smalltext" style="margin-top:8px">Antes de enviar: mismo filtro que ya funcionó en A — quitar no calificados y contactos que ya estén siendo trabajados por su asesor.</div>
-<div class="team-note" style="background:#eaf2fb;border-color:#dbe7f5;color:#134a88">SIGUE AL TERMINAR NATIONAL A</div>
+<div style="font-size:42px">➡️</div>
+<div style="font-size:18px;font-weight:900;color:#102030;margin-top:6px">Siguiente lista</div>
+<div style="font-size:28px;font-weight:900;color:#134a88;margin-top:12px">McNeilus B</div>
+<div style="font-size:16px;font-weight:800;margin-top:4px">34 contactos base</div>
+<div class="smalltext" style="margin-top:8px">
+          La lista ya fue depurada. <b>22 contactos</b> ya están en fila para recibir mensaje y el resto sigue en revisión/filtro operativo.
+        </div>
+<div class="team-note" style="background:#fff0d8;border-color:#ffd7ab;color:#9b5200">ESTATUS: EN PROCESO</div>
 </div>
 </div>
 <div class="grid split" style="margin-top:14px">
@@ -390,7 +398,7 @@ body{
 <li>Confirmar si la necesidad sigue activa.</li>
 <li>Si hay intención real → <b>handoff al asesor</b>.</li>
 </ul>
-</div>
+<div class="route-status" style="margin-top:12px;padding:10px 12px;border-radius:12px;background:#f3f5f8;border:1px solid #dfe5ec;font-size:12px;color:#526173;font-weight:700;">Estatus: SIN INICIAR · todavía no hay actualización del Call Push.</div></div>
 </div>
 </div>
 <div class="section">
@@ -427,12 +435,12 @@ body{
 </div>
 </div>
 </div>
-<div class="section"><div class="section-title">Avance actual de activación</div><div class="status-grid"><div class="status-card done"><div class="status-top"><div class="status-name">Trompo · McNeilus A</div><div class="status-badge green">Envío terminado</div></div><div class="status-big">16 enviados · 2 respuestas</div><div class="status-note">El primer grupo ya terminó de enviarse. El resto quedó fuera por contacto reciente del asesor con el mismo trompo.</div><div class="reply-box"><b>Respuestas:</b> Andres Ivan Lopez Becerril · Miguel Urbina<br/><span class="smalltext">Ambos pendientes de confirmar si se reactivan con su asesor.</span></div></div><div class="status-card done"><div class="status-top"><div class="status-name">Grúa · National A</div><div class="status-badge green">Envío terminado</div></div><div class="status-big">22 enviados · 2 respuestas</div><div class="status-note">La primera lista de grúa ya terminó de enviarse. Los demás están en espera de respuesta.</div><div class="reply-box"><b>Respuestas:</b> Mauricio Fritz · Mario Vargas<br/><span class="smalltext">Ambos son de Martín y están pendientes de confirmar si se reactivan con el asesor.</span></div></div></div><div class="pipeline-row"><div class="status-card progress"><div class="status-top"><div class="status-name">Siguiente lote · McNeilus B</div><div class="status-badge orange">En fila</div></div><div class="status-big">22 pendientes de envío</div><div class="status-note">Los 22 ya están preparados en fila. Los contactos que no deben entrar quedaron fuera por razones ya documentadas: asesor ya compartió el equipo, negociación activa, compra previa/venta, visita reciente, entrega reciente o mercado LATAM fuera del alcance actual.</div></div><div class="status-card waiting"><div class="status-top"><div class="status-name">Estado general</div><div class="status-badge blue">Monitoreando</div></div><div class="status-big">4 respuestas detectadas</div><div class="status-note">2 respuestas en Trompo A + 2 respuestas en National A. Todavía no se contabilizan como oportunidades reactivadas hasta que el asesor confirme continuidad e intención.</div></div></div></div><div class="footer">
+<div class="section"><div class="section-title">Avance actual de activación</div><div class="status-grid"><div class="status-card done"><div class="status-top"><div class="status-name">Trompo · McNeilus A</div><div class="status-badge green">Envío terminado</div></div><div class="status-big">16 enviados · 2 respuestas</div><div class="status-note">El primer grupo ya terminó de enviarse. El resto quedó fuera por contacto reciente del asesor con el mismo trompo.</div><div class="reply-box"><b>Respuestas:</b> Andres Ivan Lopez Becerril · Miguel Urbina<br/><span class="smalltext">Ambos pendientes de confirmar si se reactivan con su asesor.</span></div></div><div class="status-card done"><div class="status-top"><div class="status-name">Grúa · National A</div><div class="status-badge blue">En espera de respuestas</div></div><div class="status-big">22 enviados · 2 respuestas</div><div class="status-note">La primera lista de grúa ya terminó de enviarse. Actualmente estamos en espera de nuevas respuestas y de confirmar si Mauricio Fritz y Mario Vargas se reactivan con Martín.</div><div class="reply-box"><b>Respuestas:</b> Mauricio Fritz · Mario Vargas<br/><span class="smalltext">Ambos son de Martín y están pendientes de confirmar si se reactivan con el asesor.</span></div></div></div><div class="pipeline-row"><div class="status-card progress"><div class="status-top"><div class="status-name">Siguiente lote · McNeilus B</div><div class="status-badge orange">En proceso</div></div><div class="status-big">34 base · 22 ya en fila</div><div class="status-note">Después de depurar la lista B quedaron 34 contactos base. De esos, 22 ya están preparados en fila para recibir el mensaje; los demás siguen en revisión/filtro operativo antes de entrar.</div></div><div class="status-card waiting"><div class="status-top"><div class="status-name">Estado general</div><div class="status-badge blue">Monitoreando</div></div><div class="status-big">4 respuestas detectadas</div><div class="status-note">Trompo A y National A ya terminaron su primer envío. Seguimos esperando respuesta del resto y validando si las 4 respuestas actuales se convierten en reactivaciones reales. McNeilus B está en proceso de preparación/envío.</div></div></div></div><div class="footer">
 <div>
 <div class="box-title" style="margin-bottom:6px">Siguiente movimiento</div>
-<div class="smalltext">Terminar el envío de <b>McNeilus B (22 en fila)</b> y monitorear si las 4 respuestas actuales se convierten en reactivaciones reales con asesor.</div>
+<div class="smalltext">Continuar con <b>McNeilus B</b>: 34 contactos base, 22 ya en fila. Mientras tanto, monitorear respuestas de Trompo A y National A. <b>Ruta 2 / Call Push aún no inicia.</b></div>
 </div>
-<div class="cta">Ahora: McNeilus B → respuestas → reactivación con asesor</div>
+<div class="cta">Ahora: McNeilus B en proceso · A en espera de respuestas</div>
 </div>
 </div>
 </div>
