@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>IMPULSO INVENTARIO · Slide Comercial</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --blue:#134a88;
+  --blue2:#0f3b6e;
+  --orange:#f18c26;
+  --orange2:#ffb357;
+  --bg:#eef3f9;
+  --card:#ffffff;
+  --ink:#102030;
+  --muted:#617083;
+  --line:#dde5ef;
+  --green:#0f8a5f;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#eef3f9 0%, #f8fbff 100%);
+  font-family:Inter,Arial,sans-serif;
+  color:var(--ink);
+}
+.wrap{
+  max-width:1500px;
+  margin:0 auto;
+  padding:20px;
+}
+.slide{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:0 8px 28px rgba(16,24,40,.08);
+}
+.hero{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:18px;
+  padding:26px;
+  background:linear-gradient(135deg,var(--blue2) 0%, var(--blue) 58%, #2f74bf 100%);
+  color:#fff;
+}
+.tag{
+  display:inline-block;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.22);
+  color:#fff;
+  padding:7px 12px;
+  border-radius:999px;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+.hero h1{
+  margin:10px 0 6px;
+  font-size:42px;
+  line-height:1;
+}
+.hero .sub{
+  font-size:17px;
+  line-height:1.35;
+  max-width:760px;
+  opacity:.98;
+}
+.hero-right{
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:20px;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.hero-right .big{
+  font-size:30px;
+  font-weight:900;
+  line-height:1;
+}
+.hero-right .mini{
+  margin-top:8px;
+  font-size:14px;
+  opacity:.92;
+}
+.section{
+  padding:18px 22px 24px;
+}
+.section-title{
+  font-size:14px;
+  font-weight:900;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:var(--blue);
+  margin-bottom:12px;
+}
+.grid{
+  display:grid;
+  gap:14px;
+}
+.kpis{
+  grid-template-columns:repeat(6,1fr);
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:16px;
+}
+.kpi{
+  text-align:center;
+  background:linear-gradient(180deg,#fff 0%, #f8fbff 100%);
+}
+.kpi .n{
+  font-size:36px;
+  font-weight:900;
+  color:var(--blue);
+  line-height:1;
+}
+.kpi .l{
+  margin-top:8px;
+  font-size:12px;
+  color:var(--muted);
+}
+.split{
+  grid-template-columns:1fr 1fr;
+}
+.thirds{
+  grid-template-columns:1.1fr .9fr 1fr;
+}
+.box-title{
+  font-size:18px;
+  font-weight:900;
+  margin:0 0 10px;
+}
+.highlight{
+  color:var(--orange);
+}
+.team-note{
+  display:inline-block;
+  background:#fff7ee;
+  color:#9b5200;
+  border:1px solid #ffd7ab;
+  font-weight:800;
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  margin-top:10px;
+}
+.list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.rank{
+  display:grid;
+  grid-template-columns:56px 1fr;
+  gap:12px;
+  align-items:center;
+  padding:12px;
+  border-radius:16px;
+  background:linear-gradient(90deg,#f7fbff 0%, #ffffff 100%);
+  border:1px solid var(--line);
+}
+.num{
+  width:56px;height:56px;border-radius:18px;
+  background:linear-gradient(135deg,var(--orange) 0%, var(--orange2) 100%);
+  color:#1d232c;
+  font-size:24px;font-weight:900;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 18px rgba(241,140,38,.25);
+}
+.rank b{font-size:16px}
+.rank span{display:block;font-size:12px;color:var(--muted);margin-top:3px}
+.route{
+  position:relative;
+  overflow:hidden;
+}
+.route:before{
+  content:"";
+  position:absolute;inset:0 auto 0 0;width:7px;background:linear-gradient(180deg,var(--orange),#ffcd8b);
+}
+.route .icon{
+  font-size:28px;
+}
+.route ul{
+  padding-left:18px;
+  margin:8px 0 0;
+}
+.route li{margin:6px 0}
+.equip-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+.eq{
+  border-radius:20px;
+  padding:16px;
+  color:#fff;
+  min-height:145px;
+}
+.eq.blue{background:linear-gradient(135deg,#0f3b6e,#134a88)}
+.eq.orange{background:linear-gradient(135deg,#c86b00,#f18c26)}
+.eq.gray{background:linear-gradient(135deg,#445061,#6b7788)}
+.eq.green{background:linear-gradient(135deg,#0f6a52,#10946b)}
+.eq .name{font-size:18px;font-weight:900}
+.eq .big{font-size:34px;font-weight:900;line-height:1;margin:10px 0 4px}
+.eq .small{font-size:12px;opacity:.94;line-height:1.35}
+.dual{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.dual .mini-card{
+  border-radius:18px;
+  border:1px solid var(--line);
+  padding:14px;
+  background:#fbfdff;
+}
+.good{
+  background:linear-gradient(180deg,#eefbf6 0%, #ffffff 100%) !important;
+  border-color:#cfeede !important;
+}
+.caution{
+  background:linear-gradient(180deg,#fff8ef 0%, #ffffff 100%) !important;
+  border-color:#ffe1b8 !important;
+}
+.good .label,.caution .label{
+  display:inline-block;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+  padding:5px 8px;
+  border-radius:999px;
+  margin-bottom:8px;
+}
+.good .label{background:#dff6eb;color:#0f6a52}
+.caution .label{background:#fff0d8;color:#9b5200}
+.footer{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:18px;
+  align-items:center;
+  margin-top:16px;
+  padding:16px 22px 24px;
+  background:#fbfcfe;
+  border-top:1px solid var(--line);
+}
+.footer .cta{
+  display:inline-block;
+  padding:14px 20px;
+  border-radius:16px;
+  background:linear-gradient(135deg,var(--orange),#ffb357);
+  color:#1a1f27;
+  font-weight:900;
+  font-size:15px;
+}
+.smalltext{font-size:12px;color:var(--muted);line-height:1.4}
+@media (max-width:1200px){
+  .hero,.split,.thirds,.equip-grid,.kpis,.dual,.footer{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="slide">
+
+    <div class="hero">
+      <div>
+        <div class="tag">Antes del cierre de mes · plan comercial</div>
+        <h1>IMPULSO INVENTARIO</h1>
+        <div class="sub">
+          Activar la oportunidad real detectada en la base, con un plan simple:
+          <b>automatización para abrir conversación</b> + <b>llamadas para reactivar a los mejores prospectos</b>.
+        </div>
+        <div class="team-note">La idea no es contactar a toda la base. La idea es activar lo que sí tiene potencial real.</div>
+      </div>
+      <div class="hero-right">
+        <div class="big">¿Qué vamos a hacer?</div>
+        <div class="mini">1) Trabajar primero la lista con más probabilidad de respuesta.<br>
+        2) Mover inventario antes del cierre.<br>
+        3) Detectar oportunidades que sí valen seguimiento comercial.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Lo que encontramos</div>
+      <div class="grid kpis">
+        <div class="card kpi"><div class="n">44,748</div><div class="l">contactos analizados</div></div>
+        <div class="card kpi"><div class="n">317</div><div class="l">contactos con match</div></div>
+        <div class="card kpi"><div class="n">50</div><div class="l">MATCH A</div></div>
+        <div class="card kpi"><div class="n">82</div><div class="l">MATCH B</div></div>
+        <div class="card kpi"><div class="n">192</div><div class="l">MATCH C</div></div>
+        <div class="card kpi"><div class="n">17</div><div class="l">TOP Call Push</div></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Qué nos salió por equipo</div>
+      <div class="equip-grid">
+        <div class="eq orange">
+          <div class="name">MCNEILUS 10 YD</div>
+          <div class="big">64 A/B</div>
+          <div class="small"><b>Top de conversión.</b><br>Es el equipo con más compradores fuertes detectados.</div>
+        </div>
+        <div class="eq blue">
+          <div class="name">NATIONAL 990</div>
+          <div class="big">187 total</div>
+          <div class="small"><b>Mayor demanda histórica.</b><br>El mercado más grande está aquí.</div>
+        </div>
+        <div class="eq green">
+          <div class="name">ALTEC AT40G</div>
+          <div class="big">6 B</div>
+          <div class="small"><b>Nicho.</b><br>Se trabaja en forma consultiva, no como campaña masiva.</div>
+        </div>
+        <div class="eq gray">
+          <div class="name">GENIE GS-1930</div>
+          <div class="big">0 matches</div>
+          <div class="small"><b>No usar la base histórica.</b><br>Este inventario se mueve con demanda nueva.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">La lista TOP que va primero</div>
+      <div class="grid thirds">
+        <div class="card">
+          <div class="box-title">Orden de activación</div>
+          <div class="list">
+            <div class="rank">
+              <div class="num">1</div>
+              <div><b>McNeilus A</b><span>21 prospectos · primer golpe</span></div>
+            </div>
+            <div class="rank">
+              <div class="num">2</div>
+              <div><b>National A</b><span>29 prospectos · segunda ola inmediata</span></div>
+            </div>
+            <div class="rank">
+              <div class="num">3</div>
+              <div><b>McNeilus B</b><span>43 prospectos · siguiente prioridad</span></div>
+            </div>
+            <div class="rank">
+              <div class="num">4</div>
+              <div><b>National B</b><span>33 prospectos · volumen fuerte</span></div>
+            </div>
+            <div class="rank">
+              <div class="num">5</div>
+              <div><b>Altec B</b><span>6 prospectos · gestión consultiva</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card route">
+          <div class="icon">⚙️</div>
+          <div class="box-title">Ruta 1 · Automatización</div>
+          <ul>
+            <li>Duplicar la plantilla que ya tenemos.</li>
+            <li>Crear mensajes por lista: <b>A</b>, <b>B</b> y <b>C</b>.</li>
+            <li><b>A:</b> mensaje directo y fuerte.</li>
+            <li><b>B:</b> mensaje consultivo.</li>
+            <li><b>C:</b> solo validar si sigue buscando.</li>
+            <li>Si responde con interés real → <b>pasa a ventas</b>.</li>
+          </ul>
+        </div>
+
+        <div class="card route">
+          <div class="icon">📞</div>
+          <div class="box-title">Ruta 2 · Caller / Push humano</div>
+          <ul>
+            <li>Tomar solo la <b>lista TOP</b>.</li>
+            <li>Objetivo: presentar inventario y abrir conversación.</li>
+            <li>Confirmar si la necesidad sigue viva.</li>
+            <li>Detectar oportunidades reactivables.</li>
+            <li>Cuando se vea intención real → <b>handoff al asesor</b>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Regla simple para mandar inventario</div>
+      <div class="grid split">
+        <div class="dual">
+          <div class="mini-card good">
+            <div class="label">Sí mandar 2</div>
+            <div class="box-title" style="font-size:16px;margin-bottom:6px">Miguel Ángel Macías García</div>
+            <div><b>McNeilus + National</b></div>
+            <div class="smalltext" style="margin-top:8px">
+              Es el caso más claro. Tiene doble <b>MATCH A</b>. Se abre conversación y, si confirma ambas necesidades, sí se le comparten los dos inventarios.
+            </div>
+          </div>
+
+          <div class="mini-card caution">
+            <div class="label">No mandar 2 de inicio</div>
+            <div class="box-title" style="font-size:16px;margin-bottom:6px">Raúl Sánchez Hernández</div>
+            <div><b>National + Altec</b></div>
+            <div class="smalltext" style="margin-top:8px">
+              Primero hay que validar qué sigue buscando hoy. Luego se manda <b>solo el inventario correcto</b>.
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box-title">Regla comercial general</div>
+          <div style="font-size:24px;font-weight:900;color:var(--blue);margin-bottom:10px">No mandar 3 equipos.<br>No mandar todo el inventario.</div>
+          <div class="smalltext">
+            La recomendación es muy simple:
+            <br><br>
+            <b>• Máximo 2 equipos</b>, y solo cuando haya señales claras.<br>
+            <b>• Si un contacto tiene varios matches, se entra primero por el match más fuerte.</b><br>
+            <b>• El segundo inventario solo se comparte si la conversación lo abre.</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>
+        <div class="box-title" style="margin-bottom:6px">Recomendación final</div>
+        <div class="smalltext">
+          Para este cierre de mes, lo más efectivo es trabajar <b>las 2 rutas al mismo tiempo</b>:<br>
+          <b>automatización</b> como base + <b>llamadas</b> para la lista top.
+        </div>
+      </div>
+      <div class="cta">Acción: activar primero McNeilus A → National A → McNeilus B</div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
