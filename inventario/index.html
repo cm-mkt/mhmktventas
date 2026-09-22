@@ -279,6 +279,13 @@ body{
 .reply-list{margin:10px 0 0;padding-left:18px;font-size:13px}
 .reply-list li{margin:5px 0}
 @media(max-width:900px){.status-grid{grid-template-columns:1fr}}
+
+.status-card.waiting{background:linear-gradient(180deg,#f4f7fb,#fff);border-color:#dce4ee}
+.status-badge.blue{background:#eaf2fb;color:#134a88}
+.reply-box{margin-top:10px;padding:10px 12px;border-radius:12px;background:#fff;border:1px solid var(--line)}
+.reply-box b{color:var(--blue)}
+.pipeline-row{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;margin-top:14px}
+@media(max-width:900px){.pipeline-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -420,14 +427,12 @@ body{
 </div>
 </div>
 </div>
-<div class="section"><div class="section-title">Avance actual de activación</div><div class="status-grid"><div class="status-card done"><div class="status-top"><div class="status-name">Trompo · McNeilus A</div><div class="status-badge green">En espera de reactivación</div></div><div class="status-big">16 enviados · 2 respuestas</div><div class="status-note">El primer grupo ya terminó de enviarse. Dos leads respondieron y están pendientes de confirmar si se reactivan con su asesor.</div><ul class="reply-list"><li>Andres Ivan Lopez Becerril</li><li>Miguel Urbina</li></ul></div><div class="status-card progress"><div class="status-top"><div class="status-name">Grúa · National A</div><div class="status-badge orange">En proceso</div></div><div class="status-big">7 enviados · 15 pendientes</div><div class="status-note">La automatización sigue corriendo. Al terminar, se revisarán respuestas antes de pasar a la siguiente lista.</div></div></div></div><div class="footer">
+<div class="section"><div class="section-title">Avance actual de activación</div><div class="status-grid"><div class="status-card done"><div class="status-top"><div class="status-name">Trompo · McNeilus A</div><div class="status-badge green">Envío terminado</div></div><div class="status-big">16 enviados · 2 respuestas</div><div class="status-note">El primer grupo ya terminó de enviarse. El resto quedó fuera por contacto reciente del asesor con el mismo trompo.</div><div class="reply-box"><b>Respuestas:</b> Andres Ivan Lopez Becerril · Miguel Urbina<br/><span class="smalltext">Ambos pendientes de confirmar si se reactivan con su asesor.</span></div></div><div class="status-card done"><div class="status-top"><div class="status-name">Grúa · National A</div><div class="status-badge green">Envío terminado</div></div><div class="status-big">22 enviados · 2 respuestas</div><div class="status-note">La primera lista de grúa ya terminó de enviarse. Los demás están en espera de respuesta.</div><div class="reply-box"><b>Respuestas:</b> Mauricio Fritz · Mario Vargas<br/><span class="smalltext">Ambos son de Martín y están pendientes de confirmar si se reactivan con el asesor.</span></div></div></div><div class="pipeline-row"><div class="status-card progress"><div class="status-top"><div class="status-name">Siguiente lote · McNeilus B</div><div class="status-badge orange">En fila</div></div><div class="status-big">22 pendientes de envío</div><div class="status-note">Los 22 ya están preparados en fila. Los contactos que no deben entrar quedaron fuera por razones ya documentadas: asesor ya compartió el equipo, negociación activa, compra previa/venta, visita reciente, entrega reciente o mercado LATAM fuera del alcance actual.</div></div><div class="status-card waiting"><div class="status-top"><div class="status-name">Estado general</div><div class="status-badge blue">Monitoreando</div></div><div class="status-big">4 respuestas detectadas</div><div class="status-note">2 respuestas en Trompo A + 2 respuestas en National A. Todavía no se contabilizan como oportunidades reactivadas hasta que el asesor confirme continuidad e intención.</div></div></div></div><div class="footer">
 <div>
-<div class="box-title" style="margin-bottom:6px">Recomendación final</div>
-<div class="smalltext">
-          Seguimos trabajando <b>las 2 rutas al mismo tiempo</b>: automatización por listas + llamadas a prospectos TOP. El siguiente hito es terminar los <b>15 National A pendientes</b> y empezar a medir respuestas.
-        </div>
+<div class="box-title" style="margin-bottom:6px">Siguiente movimiento</div>
+<div class="smalltext">Terminar el envío de <b>McNeilus B (22 en fila)</b> y monitorear si las 4 respuestas actuales se convierten en reactivaciones reales con asesor.</div>
 </div>
-<div class="cta">Ahora: terminar National A → revisar respuestas → preparar McNeilus B</div>
+<div class="cta">Ahora: McNeilus B → respuestas → reactivación con asesor</div>
 </div>
 </div>
 </div>
