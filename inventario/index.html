@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<title>IMPULSO INVENTARIO · Slide Comercial</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<title>IMPULSO INVENTARIO · Avance Comercial</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
 <style>
 :root{
   --blue:#134a88;
@@ -263,173 +264,172 @@ body{
 @media (max-width:1200px){
   .hero,.split,.thirds,.equip-grid,.kpis,.dual,.footer{grid-template-columns:1fr}
 }
+
+.status-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+.status-card{border-radius:18px;padding:16px;border:1px solid var(--line);background:#fff}
+.status-card.done{background:linear-gradient(180deg,#eefbf6,#fff);border-color:#cfeede}
+.status-card.progress{background:linear-gradient(180deg,#fff8ef,#fff);border-color:#ffe1b8}
+.status-top{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.status-name{font-size:18px;font-weight:900}
+.status-badge{font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:.04em;padding:5px 9px;border-radius:999px}
+.status-badge.green{background:#dff6eb;color:#0f6a52}
+.status-badge.orange{background:#fff0d8;color:#9b5200}
+.status-big{font-size:28px;font-weight:900;margin:12px 0 4px;color:var(--blue)}
+.status-note{font-size:12px;color:var(--muted);line-height:1.45}
+.reply-list{margin:10px 0 0;padding-left:18px;font-size:13px}
+.reply-list li{margin:5px 0}
+@media(max-width:900px){.status-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="slide">
-
-    <div class="hero">
-      <div>
-        <div class="tag">Antes del cierre de mes · plan comercial</div>
-        <h1>IMPULSO INVENTARIO</h1>
-        <div class="sub">
-          Activar la oportunidad real detectada en la base, con un plan simple:
-          <b>automatización para abrir conversación</b> + <b>llamadas para reactivar a los mejores prospectos</b>.
+<div class="slide">
+<div class="hero">
+<div>
+<div class="tag">Antes del cierre de mes · avance comercial</div>
+<h1>IMPULSO INVENTARIO</h1>
+<div class="sub">
+          Ya estamos ejecutando el plan: <b>automatización para abrir conversación</b> + <b>llamadas para reactivar a los mejores prospectos</b>. Ahora el foco es terminar las listas prioritarias y medir respuestas.
         </div>
-        <div class="team-note">La idea no es contactar a toda la base. La idea es activar lo que sí tiene potencial real.</div>
-      </div>
-      <div class="hero-right">
-        <div class="big">¿Qué vamos a hacer?</div>
-        <div class="mini">1) Trabajar primero la lista con más probabilidad de respuesta.<br>
-        2) Mover inventario antes del cierre.<br>
-        3) Detectar oportunidades que sí valen seguimiento comercial.</div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Lo que encontramos</div>
-      <div class="grid kpis">
-        <div class="card kpi"><div class="n">44,748</div><div class="l">contactos analizados</div></div>
-        <div class="card kpi"><div class="n">317</div><div class="l">contactos con match</div></div>
-        <div class="card kpi"><div class="n">50</div><div class="l">MATCH A</div></div>
-        <div class="card kpi"><div class="n">82</div><div class="l">MATCH B</div></div>
-        <div class="card kpi"><div class="n">192</div><div class="l">MATCH C</div></div>
-        <div class="card kpi"><div class="n">17</div><div class="l">TOP Call Push</div></div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Qué nos salió por equipo</div>
-      <div class="equip-grid">
-        <div class="eq orange">
-          <div class="name">MCNEILUS 10 YD</div>
-          <div class="big">64 A/B</div>
-          <div class="small"><b>Top de conversión.</b><br>Es el equipo con más compradores fuertes detectados.</div>
-        </div>
-        <div class="eq blue">
-          <div class="name">NATIONAL 990</div>
-          <div class="big">187 total</div>
-          <div class="small"><b>Mayor demanda histórica.</b><br>El mercado más grande está aquí.</div>
-        </div>
-        <div class="eq green">
-          <div class="name">ALTEC AT40G</div>
-          <div class="big">6 B</div>
-          <div class="small"><b>Nicho.</b><br>Se trabaja en forma consultiva, no como campaña masiva.</div>
-        </div>
-        <div class="eq gray">
-          <div class="name">GENIE GS-1930</div>
-          <div class="big">0 matches</div>
-          <div class="small"><b>No usar la base histórica.</b><br>Este inventario se mueve con demanda nueva.</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">La lista TOP que va primero</div>
-      <div class="grid thirds">
-        <div class="card">
-          <div class="box-title">Orden de activación</div>
-          <div class="list">
-            <div class="rank">
-              <div class="num">1</div>
-              <div><b>McNeilus A</b><span>21 prospectos · primer golpe</span></div>
-            </div>
-            <div class="rank">
-              <div class="num">2</div>
-              <div><b>National A</b><span>29 prospectos · segunda ola inmediata</span></div>
-            </div>
-            <div class="rank">
-              <div class="num">3</div>
-              <div><b>McNeilus B</b><span>43 prospectos · siguiente prioridad</span></div>
-            </div>
-            <div class="rank">
-              <div class="num">4</div>
-              <div><b>National B</b><span>33 prospectos · volumen fuerte</span></div>
-            </div>
-            <div class="rank">
-              <div class="num">5</div>
-              <div><b>Altec B</b><span>6 prospectos · gestión consultiva</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card route">
-          <div class="icon">⚙️</div>
-          <div class="box-title">Ruta 1 · Automatización</div>
-          <ul>
-            <li>Duplicar la plantilla que ya tenemos.</li>
-            <li>Crear mensajes por lista: <b>A</b>, <b>B</b> y <b>C</b>.</li>
-            <li><b>A:</b> mensaje directo y fuerte.</li>
-            <li><b>B:</b> mensaje consultivo.</li>
-            <li><b>C:</b> solo validar si sigue buscando.</li>
-            <li>Si responde con interés real → <b>pasa a ventas</b>.</li>
-          </ul>
-        </div>
-
-        <div class="card route">
-          <div class="icon">📞</div>
-          <div class="box-title">Ruta 2 · Caller / Push humano</div>
-          <ul>
-            <li>Tomar solo la <b>lista TOP</b>.</li>
-            <li>Objetivo: presentar inventario y abrir conversación.</li>
-            <li>Confirmar si la necesidad sigue viva.</li>
-            <li>Detectar oportunidades reactivables.</li>
-            <li>Cuando se vea intención real → <b>handoff al asesor</b>.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="section-title">Regla simple para mandar inventario</div>
-      <div class="grid split">
-        <div class="dual">
-          <div class="mini-card good">
-            <div class="label">Sí mandar 2</div>
-            <div class="box-title" style="font-size:16px;margin-bottom:6px">Miguel Ángel Macías García</div>
-            <div><b>McNeilus + National</b></div>
-            <div class="smalltext" style="margin-top:8px">
+<div class="team-note">Estamos activando solo contactos con evidencia real y protegiendo los que ya están siendo trabajados por su asesor.</div>
+</div>
+<div class="hero-right">
+<div class="big">¿Dónde vamos?</div>
+<div class="mini"><b>✅ Trompo A:</b> envío terminado · en espera de respuestas.<br/>
+<b>🟠 National A:</b> en proceso · 7 enviados / 15 pendientes.<br/>
+<b>➡️ Sigue:</b> McNeilus B.</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">Lo que encontramos</div>
+<div class="grid kpis">
+<div class="card kpi"><div class="n">44,748</div><div class="l">contactos analizados</div></div>
+<div class="card kpi"><div class="n">317</div><div class="l">contactos con match</div></div>
+<div class="card kpi"><div class="n">50</div><div class="l">MATCH A</div></div>
+<div class="card kpi"><div class="n">82</div><div class="l">MATCH B</div></div>
+<div class="card kpi"><div class="n">192</div><div class="l">MATCH C</div></div>
+<div class="card kpi"><div class="n">17</div><div class="l">TOP Call Push</div></div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">Qué nos salió por equipo</div>
+<div class="equip-grid">
+<div class="eq orange">
+<div class="name">MCNEILUS 10 YD</div>
+<div class="big">64 A/B</div>
+<div class="small"><b>Top de conversión.</b><br/>Es el equipo con más compradores fuertes detectados.</div>
+</div>
+<div class="eq blue">
+<div class="name">NATIONAL 990</div>
+<div class="big">187 total</div>
+<div class="small"><b>Mayor demanda histórica.</b><br/>El mercado más grande está aquí.</div>
+</div>
+<div class="eq green">
+<div class="name">ALTEC AT40G</div>
+<div class="big">6 B</div>
+<div class="small"><b>Nicho.</b><br/>Se trabaja en forma consultiva, no como campaña masiva.</div>
+</div>
+<div class="eq gray">
+<div class="name">GENIE GS-1930</div>
+<div class="big">0 matches</div>
+<div class="small"><b>No usar la base histórica.</b><br/>Este inventario se mueve con demanda nueva.</div>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">Avance de activación</div>
+<div class="grid thirds">
+<div class="card" style="border:2px solid #cfeede;background:linear-gradient(180deg,#eefbf6 0%,#fff 100%)">
+<div style="font-size:30px">✅</div>
+<div class="box-title">Trompo · McNeilus A</div>
+<div style="font-size:36px;font-weight:900;color:#0f8a5f">16 enviados</div>
+<div class="smalltext" style="margin-top:8px">Primer grupo <b>completado</b>. Los restantes se protegieron porque ya tenían contacto reciente de su asesor con el trompo.</div>
+<div class="team-note" style="background:#e5f8ef;border-color:#cfeede;color:#0f6a52">ESTATUS: EN ESPERA DE RESPUESTAS</div>
+</div>
+<div class="card" style="border:2px solid #ffd7ab;background:linear-gradient(180deg,#fff7ee 0%,#fff 100%)">
+<div style="font-size:30px">🟠</div>
+<div class="box-title">Grúa · National A</div>
+<div style="display:flex;align-items:end;gap:8px"><div style="font-size:36px;font-weight:900;color:#f18c26">7</div><div style="font-size:15px;color:#617083;margin-bottom:4px">de 22 enviados</div></div>
+<div style="height:12px;background:#f2e5d8;border-radius:999px;overflow:hidden;margin:12px 0"><div style="height:100%;width:31.8%;background:linear-gradient(90deg,#f18c26,#ffb357)"></div></div>
+<div class="smalltext"><b>15 contactos pendientes</b> de envío. Al terminar, pasa también a espera de respuestas.</div>
+<div class="team-note">ESTATUS: EN PROCESO</div>
+</div>
+<div class="card" style="border:2px solid #dbe7f5;background:linear-gradient(180deg,#f3f8fe 0%,#fff 100%)">
+<div style="font-size:30px">➡️</div>
+<div class="box-title">Siguiente lista</div>
+<div style="font-size:28px;font-weight:900;color:#134a88">McNeilus B</div>
+<div style="font-size:16px;font-weight:800;margin-top:4px">43 contactos base</div>
+<div class="smalltext" style="margin-top:8px">Antes de enviar: mismo filtro que ya funcionó en A — quitar no calificados y contactos que ya estén siendo trabajados por su asesor.</div>
+<div class="team-note" style="background:#eaf2fb;border-color:#dbe7f5;color:#134a88">SIGUE AL TERMINAR NATIONAL A</div>
+</div>
+</div>
+<div class="grid split" style="margin-top:14px">
+<div class="card route">
+<div class="icon">⚙️</div>
+<div class="box-title">Ruta 1 · Automatizaciones</div>
+<ul>
+<li><b>Trompo A:</b> completado.</li>
+<li><b>National A:</b> terminar 15 pendientes.</li>
+<li>Después: <b>McNeilus B → National B → Altec B</b>.</li>
+<li>Respuesta con interés real → <b>pasar a ventas</b>.</li>
+</ul>
+</div>
+<div class="card route">
+<div class="icon">📞</div>
+<div class="box-title">Ruta 2 · Call Push</div>
+<ul>
+<li>Mantener la lista TOP para llamadas.</li>
+<li>Presentar inventario y abrir conversación.</li>
+<li>Confirmar si la necesidad sigue activa.</li>
+<li>Si hay intención real → <b>handoff al asesor</b>.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section">
+<div class="section-title">Regla simple para mandar inventario</div>
+<div class="grid split">
+<div class="dual">
+<div class="mini-card good">
+<div class="label">Sí mandar 2</div>
+<div class="box-title" style="font-size:16px;margin-bottom:6px">Miguel Ángel Macías García</div>
+<div><b>McNeilus + National</b></div>
+<div class="smalltext" style="margin-top:8px">
               Es el caso más claro. Tiene doble <b>MATCH A</b>. Se abre conversación y, si confirma ambas necesidades, sí se le comparten los dos inventarios.
             </div>
-          </div>
-
-          <div class="mini-card caution">
-            <div class="label">No mandar 2 de inicio</div>
-            <div class="box-title" style="font-size:16px;margin-bottom:6px">Raúl Sánchez Hernández</div>
-            <div><b>National + Altec</b></div>
-            <div class="smalltext" style="margin-top:8px">
+</div>
+<div class="mini-card caution">
+<div class="label">No mandar 2 de inicio</div>
+<div class="box-title" style="font-size:16px;margin-bottom:6px">Raúl Sánchez Hernández</div>
+<div><b>National + Altec</b></div>
+<div class="smalltext" style="margin-top:8px">
               Primero hay que validar qué sigue buscando hoy. Luego se manda <b>solo el inventario correcto</b>.
             </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="box-title">Regla comercial general</div>
-          <div style="font-size:24px;font-weight:900;color:var(--blue);margin-bottom:10px">No mandar 3 equipos.<br>No mandar todo el inventario.</div>
-          <div class="smalltext">
+</div>
+</div>
+<div class="card">
+<div class="box-title">Regla comercial general</div>
+<div style="font-size:24px;font-weight:900;color:var(--blue);margin-bottom:10px">No mandar 3 equipos.<br/>No mandar todo el inventario.</div>
+<div class="smalltext">
             La recomendación es muy simple:
-            <br><br>
-            <b>• Máximo 2 equipos</b>, y solo cuando haya señales claras.<br>
-            <b>• Si un contacto tiene varios matches, se entra primero por el match más fuerte.</b><br>
-            <b>• El segundo inventario solo se comparte si la conversación lo abre.</b>
-          </div>
+            <br/><br/>
+<b>• Máximo 2 equipos</b>, y solo cuando haya señales claras.<br/>
+<b>• Si un contacto tiene varios matches, se entra primero por el match más fuerte.</b><br/>
+<b>• El segundo inventario solo se comparte si la conversación lo abre.</b>
+</div>
+</div>
+</div>
+</div>
+<div class="section"><div class="section-title">Avance actual de activación</div><div class="status-grid"><div class="status-card done"><div class="status-top"><div class="status-name">Trompo · McNeilus A</div><div class="status-badge green">En espera de reactivación</div></div><div class="status-big">16 enviados · 2 respuestas</div><div class="status-note">El primer grupo ya terminó de enviarse. Dos leads respondieron y están pendientes de confirmar si se reactivan con su asesor.</div><ul class="reply-list"><li>Andres Ivan Lopez Becerril</li><li>Miguel Urbina</li></ul></div><div class="status-card progress"><div class="status-top"><div class="status-name">Grúa · National A</div><div class="status-badge orange">En proceso</div></div><div class="status-big">7 enviados · 15 pendientes</div><div class="status-note">La automatización sigue corriendo. Al terminar, se revisarán respuestas antes de pasar a la siguiente lista.</div></div></div></div><div class="footer">
+<div>
+<div class="box-title" style="margin-bottom:6px">Recomendación final</div>
+<div class="smalltext">
+          Seguimos trabajando <b>las 2 rutas al mismo tiempo</b>: automatización por listas + llamadas a prospectos TOP. El siguiente hito es terminar los <b>15 National A pendientes</b> y empezar a medir respuestas.
         </div>
-      </div>
-    </div>
-
-    <div class="footer">
-      <div>
-        <div class="box-title" style="margin-bottom:6px">Recomendación final</div>
-        <div class="smalltext">
-          Para este cierre de mes, lo más efectivo es trabajar <b>las 2 rutas al mismo tiempo</b>:<br>
-          <b>automatización</b> como base + <b>llamadas</b> para la lista top.
-        </div>
-      </div>
-      <div class="cta">Acción: activar primero McNeilus A → National A → McNeilus B</div>
-    </div>
-
-  </div>
+</div>
+<div class="cta">Ahora: terminar National A → revisar respuestas → preparar McNeilus B</div>
+</div>
+</div>
 </div>
 </body>
 </html>
