@@ -105,6 +105,17 @@
     .fill.yellow{background:linear-gradient(90deg,var(--yellow),#ffd166)}
     .fill.red{background:linear-gradient(90deg,var(--red),#ff8a8a)}
     .bar-val{font-size:13px;font-weight:900;text-align:right}
+
+    /* Colores exclusivos para Evolución general */
+    .fill.month-apr { background:linear-gradient(90deg,#1f6feb,#55a0ff); }
+    .fill.month-may { background:linear-gradient(90deg,#f18c26,#ffb35f); }
+    .fill.month-jun { background:linear-gradient(90deg,#7c5ce5,#a891f1); }
+    .fill.month-jul { background:linear-gradient(90deg,#168a9c,#55b9c7); }
+    .fill.month-aug { background:linear-gradient(90deg,#c89b1d,#e5c45b); }
+    .fill.month-sep { background:linear-gradient(90deg,#4859c7,#7b87df); }
+    .fill.best-month { background:linear-gradient(90deg,var(--green),#49cc88) !important; }
+    .fill.worst-month { background:linear-gradient(90deg,var(--red),#ff8a8a) !important; }
+
     .quote{
       border-left:5px solid var(--blue);
       padding:14px 16px;
@@ -197,27 +208,34 @@
       <div class="card">
         <h2>Evolución general</h2>
         <div class="bar-wrap">
-          <div class="bar-row"><div class="bar-label">1ra hora abril</div><div class="bar"><div class="fill" style="width:47.8%"></div></div><div class="bar-val">47.8%</div></div>
-          <div class="bar-row"><div class="bar-label">1ra hora mayo</div><div class="bar"><div class="fill green" style="width:62.9%"></div></div><div class="bar-val">62.9%</div></div>
-          <div class="bar-row"><div class="bar-label">1ra hora junio</div><div class="bar"><div class="fill yellow" style="width:85.6%"></div></div><div class="bar-val">85.6%</div></div>
-          <div class="bar-row"><div class="bar-label">1ra hora julio</div><div class="bar"><div class="fill red" style="width:65.8%"></div></div><div class="bar-val">65.8%</div></div>
-          <div class="bar-row"><div class="bar-label">1ra hora agosto</div><div class="bar"><div class="fill yellow" style="width:70.4%"></div></div><div class="bar-val">70.4%</div></div>
-          <div class="bar-row"><div class="bar-label">1ra hora septiembre</div><div class="bar"><div class="fill green" style="width:88.1%"></div></div><div class="bar-val">88.1%</div></div>
+          <div class="bar-row"><div class="bar-label">1ra hora abril</div><div class="bar"><div class="fill worst-month" style="width:47.8%"></div></div><div class="bar-val">47.8%</div></div>
+          <div class="bar-row"><div class="bar-label">1ra hora mayo</div><div class="bar"><div class="fill month-may" style="width:62.9%"></div></div><div class="bar-val">62.9%</div></div>
+          <div class="bar-row"><div class="bar-label">1ra hora junio</div><div class="bar"><div class="fill month-jun" style="width:85.6%"></div></div><div class="bar-val">85.6%</div></div>
+          <div class="bar-row"><div class="bar-label">1ra hora julio</div><div class="bar"><div class="fill month-jul" style="width:65.8%"></div></div><div class="bar-val">65.8%</div></div>
+          <div class="bar-row"><div class="bar-label">1ra hora agosto</div><div class="bar"><div class="fill month-aug" style="width:70.4%"></div></div><div class="bar-val">70.4%</div></div>
+          <div class="bar-row"><div class="bar-label">1ra hora septiembre</div><div class="bar"><div class="fill best-month" style="width:88.1%"></div></div><div class="bar-val">88.1%</div></div>
 
-          <div class="bar-row"><div class="bar-label">Nota abril</div><div class="bar"><div class="fill" style="width:61.3%"></div></div><div class="bar-val">61.3%</div></div>
-          <div class="bar-row"><div class="bar-label">Nota mayo</div><div class="bar"><div class="fill green" style="width:75.6%"></div></div><div class="bar-val">75.6%</div></div>
-          <div class="bar-row"><div class="bar-label">Nota junio</div><div class="bar"><div class="fill yellow" style="width:83.9%"></div></div><div class="bar-val">83.9%</div></div>
-          <div class="bar-row"><div class="bar-label">Nota julio</div><div class="bar"><div class="fill green" style="width:91.7%"></div></div><div class="bar-val">91.7%</div></div>
-          <div class="bar-row"><div class="bar-label">Nota agosto</div><div class="bar"><div class="fill yellow" style="width:88.0%"></div></div><div class="bar-val">88.0%</div></div>
-          <div class="bar-row"><div class="bar-label">Nota septiembre</div><div class="bar"><div class="fill green" style="width:95.3%"></div></div><div class="bar-val">95.3%</div></div>
+          <div class="bar-row"><div class="bar-label">Nota abril</div><div class="bar"><div class="fill worst-month" style="width:61.3%"></div></div><div class="bar-val">61.3%</div></div>
+          <div class="bar-row"><div class="bar-label">Nota mayo</div><div class="bar"><div class="fill month-may" style="width:75.6%"></div></div><div class="bar-val">75.6%</div></div>
+          <div class="bar-row"><div class="bar-label">Nota junio</div><div class="bar"><div class="fill month-jun" style="width:83.9%"></div></div><div class="bar-val">83.9%</div></div>
+          <div class="bar-row"><div class="bar-label">Nota julio</div><div class="bar"><div class="fill month-jul" style="width:91.7%"></div></div><div class="bar-val">91.7%</div></div>
+          <div class="bar-row"><div class="bar-label">Nota agosto</div><div class="bar"><div class="fill month-aug" style="width:88.0%"></div></div><div class="bar-val">88.0%</div></div>
+          <div class="bar-row"><div class="bar-label">Nota septiembre</div><div class="bar"><div class="fill best-month" style="width:95.3%"></div></div><div class="bar-val">95.3%</div></div>
 
-          <div class="bar-row"><div class="bar-label">Regla abril</div><div class="bar"><div class="fill" style="width:34.8%"></div></div><div class="bar-val">34.8%</div></div>
-          <div class="bar-row"><div class="bar-label">Regla mayo</div><div class="bar"><div class="fill green" style="width:47.7%"></div></div><div class="bar-val">47.7%</div></div>
-          <div class="bar-row"><div class="bar-label">Regla junio</div><div class="bar"><div class="fill yellow" style="width:72.2%"></div></div><div class="bar-val">72.2%</div></div>
-          <div class="bar-row"><div class="bar-label">Regla julio</div><div class="bar"><div class="fill red" style="width:61.8%"></div></div><div class="bar-val">61.8%</div></div>
-          <div class="bar-row"><div class="bar-label">Regla agosto</div><div class="bar"><div class="fill green" style="width:66.7%"></div></div><div class="bar-val">66.7%</div></div>
-          <div class="bar-row"><div class="bar-label">Regla septiembre</div><div class="bar"><div class="fill green" style="width:85.2%"></div></div><div class="bar-val">85.2%</div></div>
+          <div class="bar-row"><div class="bar-label">Regla abril</div><div class="bar"><div class="fill worst-month" style="width:34.8%"></div></div><div class="bar-val">34.8%</div></div>
+          <div class="bar-row"><div class="bar-label">Regla mayo</div><div class="bar"><div class="fill month-may" style="width:47.7%"></div></div><div class="bar-val">47.7%</div></div>
+          <div class="bar-row"><div class="bar-label">Regla junio</div><div class="bar"><div class="fill month-jun" style="width:72.2%"></div></div><div class="bar-val">72.2%</div></div>
+          <div class="bar-row"><div class="bar-label">Regla julio</div><div class="bar"><div class="fill month-jul" style="width:61.8%"></div></div><div class="bar-val">61.8%</div></div>
+          <div class="bar-row"><div class="bar-label">Regla agosto</div><div class="bar"><div class="fill month-aug" style="width:66.7%"></div></div><div class="bar-val">66.7%</div></div>
+          <div class="bar-row"><div class="bar-label">Regla septiembre</div><div class="bar"><div class="fill best-month" style="width:85.2%"></div></div><div class="bar-val">85.2%</div></div>
+        
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)">
+          <span class="small"><b style="color:var(--red)">Rojo</b> = peor resultado del indicador</span>
+          <span class="small">·</span>
+          <span class="small"><b style="color:var(--green)">Verde</b> = mejor resultado del indicador</span>
+          <span class="small">· Los meses intermedios conservan un color distinto para facilitar la lectura.</span>
         </div>
+</div>
       </div>
 
       <div class="card">
